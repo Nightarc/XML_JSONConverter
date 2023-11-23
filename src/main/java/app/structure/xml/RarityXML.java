@@ -1,5 +1,6 @@
 package app.structure.xml;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Data;
@@ -14,6 +15,6 @@ import java.util.List;
 public class RarityXML {
     @JacksonXmlProperty(localName = "tier")
     @JacksonXmlElementWrapper(useWrapping = false)
-   // @Singular
+    @JsonProperty(value = "tier")
     List<TierXML> rarityTiers;
 }

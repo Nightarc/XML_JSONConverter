@@ -1,8 +1,11 @@
 package app.structure.json;
 
 import app.structure.xml.RarityXML;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import lombok.Builder;
+import lombok.Data;
 
+@Builder
+@Data
 public class SpellJSON {
     int id;
     String name;

@@ -83,7 +83,6 @@
             <tier id="3">0.3</tier>
             <tier id="4">0.3</tier>
             <tier id="5">0.3</tier>
-            <tier id="5">0.3</tier>
         </rarity>
     </spell>
     <spell id="5" name="omniscient_eye">

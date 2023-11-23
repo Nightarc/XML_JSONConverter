@@ -7,12 +7,15 @@ import lombok.val;
 
 public class Main {
     public static void main(String[] args) {
-        val input = "src/test/resources/SingleSpell.xml";
-        File file = new File(input);
+        val input = "src/test/resources/SpellXML.xml";
+        val output = "src/test/resources/outputJSON.json";
+        File inputFile = new File(input);
+        File outputFile = new File(output);
 
         XMLtoJSON converter = new XMLtoJSON();
         try {
-            System.out.println(converter.read(file));
+            System.out.println(converter.read(inputFile));
+            converter.write(converter.read(inputFile), outputFile);
         }
         catch(Exception e)
         {
