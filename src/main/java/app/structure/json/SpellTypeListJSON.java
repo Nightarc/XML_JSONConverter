@@ -2,9 +2,9 @@ package app.structure.json;
 
 import lombok.Data;
 
-import java.util.List;
+import java.util.Map;
+
 @Data
 public class SpellTypeListJSON {
-    String type;
-    List<SpellJSON> spells;
+    Map<String, SpellTypeJSON> types;
 }
