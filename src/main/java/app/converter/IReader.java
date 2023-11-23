@@ -1,11 +1,11 @@
 package app.converter;
 
-import app.structure.xml.SpellXML;
+import app.structure.xml.SpellBookXML;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
+
 
 public interface IReader {
-    List<SpellXML> read(File inputFile) throws IOException;
+    SpellBookXML read(File inputFile) throws IOException;
 }

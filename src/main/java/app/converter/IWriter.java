@@ -1,11 +1,10 @@
 package app.converter;
 
-import app.structure.xml.SpellXML;
+import app.structure.xml.SpellBookXML;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 public interface IWriter {
-    void write(List<SpellXML> spells, File outputFile) throws IOException;
+    void write(SpellBookXML spells, File outputFile) throws IOException;
 }

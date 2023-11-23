@@ -2,20 +2,19 @@ package app;
 
 import java.io.*;
 
-import app.converter.XMLtoJSON;
+import app.converter.XML;
 import lombok.val;
 
 public class Main {
     public static void main(String[] args) {
-        val input = "src/test/resources/SpellXML.xml";
-        val output = "src/test/resources/outputJSON.json";
+        val input = "src/test/resources/outputJSON.json";
+        val output = "src/test/resources/outputTestXML.xml";
         File inputFile = new File(input);
         File outputFile = new File(output);
 
-        XMLtoJSON converter = new XMLtoJSON();
+        XML xmlConverter = new XML();
         try {
-            System.out.println(converter.read(inputFile));
-            converter.write(converter.read(inputFile), outputFile);
+            xmlConverter.write(xmlConverter.read(inputFile), outputFile);
         }
         catch(Exception e)
         {
