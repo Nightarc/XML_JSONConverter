@@ -2,19 +2,26 @@ package app;
 
 import java.io.*;
 
+import app.converter.JSON;
 import app.converter.XML;
 import lombok.val;
 
 public class Main {
     public static void main(String[] args) {
-        val input = "src/test/resources/outputJSON.json";
-        val output = "src/test/resources/outputTestXML.xml";
-        File inputFile = new File(input);
-        File outputFile = new File(output);
+        val xmlInput = "src/test/resources/SpellXML.xml";
+        val jsonInput = "src/test/resources/outputJSON.json";
+        val jsonOutput = "src/test/resources/outputJSON.json";
+        val xmlOutput = "src/test/resources/outputTestXML.xml";
+        File xmlInputFile = new File(xmlInput);
+        File jsonInputFile = new File(jsonInput);
+        File xmlOutputFile = new File(xmlOutput);
+        File jsonOutputFile = new File(jsonOutput);
 
         XML xmlConverter = new XML();
+        JSON jsonConverter = new JSON();
         try {
-            xmlConverter.write(xmlConverter.read(inputFile), outputFile);
+            jsonConverter.write(xmlConverter.read(xmlInputFile), jsonOutputFile);
+            xmlConverter.write(jsonConverter.read(jsonInputFile), xmlOutputFile);
         }
         catch(Exception e)
         {
