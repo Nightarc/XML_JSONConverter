@@ -5,6 +5,9 @@ import java.io.*;
 import app.converter.JSON;
 import app.converter.XML;
 
+/**
+ * Основной класс
+ */
 public class Main {
     enum convertType
     {
@@ -13,8 +16,8 @@ public class Main {
         INVALID
     }
     public static void main(String[] args) {
-        XML XMLHelper = new XML();
-        JSON JSONHelper = new JSON();
+        XML xmlHelper = new XML();
+        JSON jsonHelper = new JSON();
 
         if(args.length == 2)
         {
@@ -23,19 +26,19 @@ public class Main {
                 File outputFile = new File(args[1]);
                 switch(defineConversionType(args))
                 {
-                    case XML_TO_JSON -> JSONHelper.write(XMLHelper.read(inputFile), outputFile);
-                    case JSON_TO_XML -> XMLHelper.write(JSONHelper.read(inputFile), outputFile);
+                    case XML_TO_JSON -> jsonHelper.write(xmlHelper.read(inputFile), outputFile);
+                    case JSON_TO_XML -> xmlHelper.write(jsonHelper.read(inputFile), outputFile);
                     default -> System.out.println("Такой тип преобразования не поддерживается.");
                 }
             }
             catch(Exception e)
             {
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             }
         }
         else
         {
-            System.out.println("Use: .jar <input-file> <output-file>");
+            System.err.println("Use: .jar <input-file> <output-file>");
         }
     }
 

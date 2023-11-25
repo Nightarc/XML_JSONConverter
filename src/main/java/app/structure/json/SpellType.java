@@ -6,6 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+
+/**
+ * Представляет класс контейнер заклинаний одного типа в формате JSON.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

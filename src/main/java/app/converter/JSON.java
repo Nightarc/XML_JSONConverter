@@ -14,6 +14,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Класс, обрабатывающий файлы формата JSON.
+ */
 public final class JSON implements IReader, IWriter {
     ObjectMapper jsonMapper = new ObjectMapper();
     @Override

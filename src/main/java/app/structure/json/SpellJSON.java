@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Представляет класс заклинания с его характеристиками в формате JSON.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

@@ -6,6 +6,9 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Класс, обрабатывающий файлы формата XML.
+ */
 public final class XML implements IReader, IWriter{
     XmlMapper xmlMapper = new XmlMapper();
 

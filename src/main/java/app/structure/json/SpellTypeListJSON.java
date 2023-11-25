@@ -9,6 +9,9 @@ import java.util.List;
 
 import static com.fasterxml.jackson.annotation.JsonTypeInfo.As.WRAPPER_OBJECT;
 
+/**
+ * Представляет класс контейнер для типов заклинаний в формате JSON.
+ */
 @Data
 public class SpellTypeListJSON {
     @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = WRAPPER_OBJECT)
