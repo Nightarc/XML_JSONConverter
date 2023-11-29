@@ -4,12 +4,14 @@ import java.io.*;
 
 import app.converter.JSON;
 import app.converter.XML;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 /**
- * Основной класс
+ * Основной класс приложения конвертации документов XML в JSON и наоборот.
  */
 public class Main {
-    enum convertType
+    private enum convertType
     {
         XML_TO_JSON,
         JSON_TO_XML,
@@ -31,6 +33,14 @@ public class Main {
                     default -> System.out.println("Такой тип преобразования не поддерживается.");
                 }
             }
+            catch(JsonParseException e)
+            {
+                System.err.println("Ошибка: пустой файл для чтения");
+            }
+            catch(JsonMappingException e)
+            {
+                System.err.println("Произошла ошибка при чтении/записи файла");
+            }
             catch(Exception e)
             {
                 System.err.println(e.getMessage());
@@ -38,7 +48,7 @@ public class Main {
         }
         else
         {
-            System.err.println("Use: .jar <input-file> <output-file>");
+            System.err.println("Использование: .jar <input-file> <output-file>");
         }
     }
 

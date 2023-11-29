@@ -13,7 +13,7 @@
             <tier id="1">0.3</tier>
             <tier id="10">0.2</tier>
         </rarity>
-    </spell>
+    </spell
     
     <spell id="1" name="circle_of_acid">
         <type>material</type>
