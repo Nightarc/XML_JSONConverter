@@ -30,7 +30,7 @@ public class Main {
                 {
                     case XML_TO_JSON -> jsonHelper.write(xmlHelper.read(inputFile), outputFile);
                     case JSON_TO_XML -> xmlHelper.write(jsonHelper.read(inputFile), outputFile);
-                    default -> System.out.println("Такой тип преобразования не поддерживается.");
+                    default -> System.err.println("Такой тип преобразования не поддерживается.");
                 }
             }
             catch(JsonParseException e)
@@ -45,6 +45,8 @@ public class Main {
             {
                 System.err.println(e.getMessage());
             }
+
+            System.out.println("Преобразование успешно.");
         }
         else
         {
@@ -52,7 +54,7 @@ public class Main {
         }
     }
 
-    public static convertType defineConversionType(String[] args)
+    private static convertType defineConversionType(String[] args)
     {
         if (args[0].endsWith(".xml") && args[1].endsWith(".json")) {
             return convertType.XML_TO_JSON;

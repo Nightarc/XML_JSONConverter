@@ -4,8 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,10 +11,8 @@ import java.nio.file.Path;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTests {
-    private final PrintStream systemOut = System.out;
     private final PrintStream systemErr = System.err;
     private ByteArrayOutputStream err;
-    private ByteArrayOutputStream out;
 
     @BeforeEach
     public void setupStreams()
@@ -28,7 +24,6 @@ class MainTests {
     @AfterEach
     public void restoreStreams()
     {
-        System.setOut(systemOut);
         System.setOut(systemErr);
     }
     @Test
@@ -82,7 +77,21 @@ class MainTests {
 
     }
 
+    @Test
+    void UnsupportedFiles()
+    {
+        String[] args = {"pdfExample.pdf", "jsonExample.json"};
+        Main.main(args);
+        assertEquals("Такой тип преобразования не поддерживается.", err.toString().trim());
 
+    }
 
+    @Test
+    void MainWithWrongArguments()
+    {
+        String[] args = {"TotallyAFile", "LooksLikeAFile"};
+        Main.main(args);
+        assertEquals("Такой тип преобразования не поддерживается.", err.toString().trim());
 
+    }
 }

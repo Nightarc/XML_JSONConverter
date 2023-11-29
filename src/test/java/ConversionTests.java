@@ -42,6 +42,14 @@ class ConversionTests {
     @Test
     void EmptyExistingFileWrite()
     {
+        File f = new File("src/test/resources/jsonEmpty.json");
+        f.delete();
+        try{
+            f.createNewFile();
+        }
+        catch(Exception e){
+            System.err.println(e.getMessage());}
+
         String[] args = {"src/test/resources/SpellXML.xml", "src/test/resources/jsonEmpty.json"};
         Main.main(args);
 
