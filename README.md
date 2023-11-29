@@ -1,6 +1,6 @@
 # README
 ## XML_JSONConverter
-XML_JSONConverter - сервия для преобразования файлов из формата XML в JSON и наоборот.
+XML_JSONConverter - сервис для преобразования файлов из формата XML в JSON и наоборот.
 
 ### Особенности:
 - Поддержка форматов XML и JSON.
